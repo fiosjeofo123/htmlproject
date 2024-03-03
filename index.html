@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Stopwatch Website</title>
+    </head>
+    <body style="overflow: hidden;">
+        <p id="time" style="font-size: 300px; font-family: sans-serif; margin: 0px;">0.0</p>
+        <button id="pauseButton" onclick="const button = document.getElementById('pauseButton'); if(paused == 0) {paused = 1; button.innerHTML = 'Play'} else {paused = 0; button.innerHTML = 'Pause'}">Pause</button>
+        <button onclick="const counter = document.getElementById('time'); counter.innerHTML = 0;">Reset</button>
+        <script>
+            const counter = document.getElementById("time");
+            var paused = 0
+            setInterval(update, 100)
+            function update() {
+                if(paused == 0) {
+                counter.innerHTML = Math.round((Number(counter.innerHTML) + 0.1) * 10) / 10;
+            }}
+        </script>
+        <style>
+            button {
+                font-size: 30px;
+            }
+        </style>
+    </body>
+</html>
